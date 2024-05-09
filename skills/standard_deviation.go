@@ -8,5 +8,6 @@ func StandardDeviation(input []float64) float64 {
 		return 0
 	}
 	res = math.Sqrt(Variance(input))
+
 	return res
 }

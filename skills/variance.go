@@ -24,6 +24,7 @@ func Variance(input []float64) float64 {
 		sum += (nums - avg) * (nums - avg)
 		res = sum / l
 	}
+
 	return res
 }
 

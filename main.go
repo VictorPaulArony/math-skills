@@ -2,43 +2,56 @@
 package main
 
 import (
-    "fmt"
+	"fmt"
+	"io/ioutil"
+	"strconv"
 	"strings"
-    "io/ioutil"
-    "math"
-    "strconv"
 
-    "math-skills/skills" // Import your local package
+	"math-skills/skills" // Import your local package
 )
 
 func main() {
-    inputStr, err := ioutil.ReadFile("data.txt")
-    if err != nil {
-        fmt.Println("INVALID FILE", err)
-        return
-    }
+	inputStr, err := ioutil.ReadFile("data.txt")
+	if err != nil {
+		fmt.Println("INVALID FILE", err)
+		return
+	}
 
-    numbers:= strings.Split(string(inputStr), "\n")
+	numbers := strings.Split(string(inputStr), "\n")
 	var val []float64
-	for _, num := range numbers{
+	for _, num := range numbers {
 		if num == "" {
-            continue
-        }
-    n, err := strconv.ParseFloat(num, 64)
-    if err != nil {
-        fmt.Println("INVALID NUMBERS", err)
-        return
-    }
-	val = append(val, n)
-}
+			continue
+		}
+		n, err := strconv.ParseFloat(num, 64)
+		if err != nil {
+			fmt.Println("INVALID NUMBERS", err)
+			return
+		}
+		val = append(val, n)
+	}
 
-    // Call the correct function from the skills package
-    avg := skills.Avarage(val)
-    fmt.Println("Average:", math.Round(avg))
-    med := skills.Median(val)
-    fmt.Println("Median:", math.Round(med))
-    variance := skills.Variance(val)
-    fmt.Println("Variance:", variance)
-    stdDev := skills.StandardDeviation(val)
-    fmt.Println("Standard Deviation:", stdDev)
+	// Call the correct function from the skills package
+	avg := skills.Avarage(val)
+	// if avg > 184467440737095516 {
+	// 	fmt.Println("TO MANY VALUES TO RETURN")
+        
+	// }
+	fmt.Printf("Average: %0.f \n",avg) //math.Round(avg))
+	med := skills.Median(val)
+	// if med > 184467440737095516 {
+	// 	fmt.Println("TO MANY VALUES TO RETURN")
+
+	// }
+	fmt.Printf("Median: %0.f \n", med)
+	variance := skills.Variance(val)
+	// if variance > 184467440737095516 {
+	// 	fmt.Println("TO MANY VALUES TO RETURN")
+	// }
+	fmt.Printf("Variance: %0.f \n", variance)
+	stdDev := skills.StandardDeviation(val)
+	// if stdDev > 184467440737095516 {
+	// 	fmt.Println("TO MANY VALUES TO RETURN")
+	// }
+	fmt.Printf("Standard Deviation: %0.f \n", stdDev)
 }

@@ -9,5 +9,6 @@ func StringToInteger(input string) float64 {
     if err!= nil {
         return 0
     }
+    
     return res
 }

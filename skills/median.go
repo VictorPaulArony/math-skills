@@ -17,5 +17,6 @@ func Median(input []float64) float64 {
 	} else {
 		res = input[l/2]
 	}
+
 	return res
 }
