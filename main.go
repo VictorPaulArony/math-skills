@@ -16,6 +16,10 @@ func main() {
 		fmt.Println("INVALID FILE", err)
 		return
 	}
+	if len(inputStr) == 0 {
+        fmt.Println("Data.txt IS EMPTY")
+		return
+    }
 
 	numbers := strings.Split(string(inputStr), "\n")
 	var val []float64
@@ -25,7 +29,7 @@ func main() {
 		}
 		n, err := strconv.ParseFloat(num, 64)
 		if err != nil {
-			fmt.Println("INVALID NUMBERS", err)
+			fmt.Println("INVALID INPUT IN THE FILE")
 			return
 		}
 		val = append(val, n)
@@ -35,9 +39,9 @@ func main() {
 	avg := skills.Avarage(val)
 	// if avg > 184467440737095516 {
 	// 	fmt.Println("TO MANY VALUES TO RETURN")
-        
+
 	// }
-	fmt.Printf("Average: %0.f \n",avg) //math.Round(avg))
+	fmt.Printf("Average: %0.f \n", avg) // math.Round(avg))
 	med := skills.Median(val)
 	// if med > 184467440737095516 {
 	// 	fmt.Println("TO MANY VALUES TO RETURN")
