@@ -2,16 +2,6 @@ package skills
 
 // This is the function that return variance σ2=1NN∑i=1(xi−μ)2 σ 2 = 1 N ∑ i = 1 N ( x i − μ ) 2
 func Variance(input []float64) float64 {
-	// var res int
-	// if input == nil {
-	//     return 0
-	// }
-	// count := 0
-	// for _, v := range input {
-	//     count += v
-	// }
-	//  res = count / len(input)
-	//  return res
 	var res float64
 	l := float64(len(input))
 	sum := 0.0
@@ -27,8 +17,3 @@ func Variance(input []float64) float64 {
 
 	return res
 }
-
-// func main() {
-// 	var input []int
-// 	fmt.Println(variance(input))
-// }

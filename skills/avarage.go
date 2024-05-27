@@ -1,4 +1,5 @@
 package skills
+
 // function to calculate the avarage of the given numbers in the input list
 func Avarage(input []float64) float64 {
 	var res float64
@@ -10,6 +11,6 @@ func Avarage(input []float64) float64 {
 		count += v
 	}
 	res = count / float64(len(input))
-	
+
 	return res
 }

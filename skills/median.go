@@ -2,13 +2,8 @@ package skills
 
 import "sort"
 
+// the median of the odd input data and the even input data field
 func Median(input []float64) float64 {
-	// sort.Ints(input)
-	// if len(input) % 2 == 0 {
-	//     return (input[len(input) / 2] + input[len(input) / 2 - 1]) / 2
-	// } else {
-	//     return input[len(input) / 2]
-	// }
 	var res float64
 	sort.Float64s(input)
 	l := len(input)
